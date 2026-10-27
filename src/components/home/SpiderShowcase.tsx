@@ -11,7 +11,7 @@ export function SpiderShowcase({ locale, content }: { locale: Locale; content: H
   const rtl = locale === "fa";
   return <section id="spider2" className="spider-showcase" aria-labelledby="spider-showcase-title">
     <Container>
-      <header className="spider-showcase__header">
+      <header id="products" className="spider-showcase__header">
         <div><p className="section-eyebrow"><span className="section-eyebrow__line" aria-hidden="true" />{content.eyebrow}</p>
           <p className="spider-showcase__model" lang="en">{content.model}</p>
           <h2 id="spider-showcase-title" className="spider-showcase__title">{content.title}</h2></div>
