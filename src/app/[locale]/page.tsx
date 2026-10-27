@@ -5,6 +5,10 @@ import { useParams } from "next/navigation";
 import Container from "@/components/ui/Container";
 import ArrowIcon from "@/components/ui/ArrowIcon";
 import { siteContent } from "@/content/site-content";
+import { homeContent } from "@/content/home-content";
+import { PhilosophySection } from "@/components/home/PhilosophySection";
+import { PrinciplesSection } from "@/components/home/PrinciplesSection";
+import { SpiderShowcase } from "@/components/home/SpiderShowcase";
 import { isLocale, type Locale } from "@/lib/locale";
 
 export default function HomePage() {
@@ -58,35 +62,9 @@ export default function HomePage() {
         <div className="hero-bottom-line"><Container><span>RK AUDIO / EST. FOR THE LISTENER</span><span>DESIGN MEETS SOUND&nbsp; ↘</span></Container></div>
       </section>
 
-      <section className="intro-section" id="story">
-        <Container className="intro-grid">
-          <p className="section-kicker"><span>01</span> / {t.introLabel}</p>
-          <div><h2>{t.introTitle}</h2><p className="section-copy">{t.introText}</p></div>
-          <div className="intro-stamp"><span>RK</span><small>DESIGNED<br />TO BE HEARD</small></div>
-        </Container>
-      </section>
-
-      <section className="products-section" id="products">
-        <Container>
-          <div className="section-heading">
-            <div><p className="section-kicker"><span>02</span> / {t.productsLabel}</p><h2>{t.productsTitle}</h2></div>
-            <p className="section-copy">{t.productsText}</p>
-          </div>
-          <article className="product-card">
-            <div className="product-visual">
-              <div className="product-halo" />
-              <div className="product-cabinet"><div className="cabinet-top" /><div className="cabinet-plate"><div className="mini-spider">✳</div><small>RK / SPIDER</small></div><div className="cabinet-speaker"><span /><i /></div><div className="cabinet-bottom">SPIDER 02</div></div>
-              <span className="product-visual-index">02 — 01</span>
-            </div>
-            <div className="product-info">
-              <div className="product-meta"><span>{t.productType}</span><span className="product-status">{t.productStatus}</span></div>
-              <h3>{t.productName}</h3>
-              <p>{t.productDescription}</p>
-              <a className="text-link" href="#contact">{locale === "fa" ? "دربارهٔ این محصول" : "Explore the product"} <ArrowIcon rtl={rtl} /></a>
-            </div>
-          </article>
-        </Container>
-      </section>
+      <PhilosophySection content={homeContent[locale].philosophy} />
+      <PrinciplesSection content={homeContent[locale].principles} />
+      <SpiderShowcase locale={locale} content={homeContent[locale].showcase} />
 
       <section className="manifesto-section">
         <Container className="manifesto-inner">
